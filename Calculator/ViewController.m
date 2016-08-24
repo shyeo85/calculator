@@ -125,6 +125,7 @@ typedef enum opr Operator;
     currentOpr = 0;  //=none
     calc = [[Calculator alloc] init];
     self.number =0;
+    self.myLabel.text = @"0";
     
 }
 
