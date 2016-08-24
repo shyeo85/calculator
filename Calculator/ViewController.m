@@ -14,7 +14,7 @@ typedef enum opr Operator;
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *myLabel;
-@property (nonatomic) int number;
+
 
 @end
 
@@ -45,6 +45,7 @@ typedef enum opr Operator;
         default:
             break;
     }
+    self.myLabel.text = [NSString stringWithFormat:@"%d", currentValue];
     
 }
 - (IBAction)clickOpr:(id)sender {
@@ -85,13 +86,13 @@ typedef enum opr Operator;
     
     int value = (int) btn.tag;
     
-
+    currentValue = currentValue * 10 + value;
     
-    if (currentOpr == none){
-        currentValue = currentValue * 10 + value;
-    } else {
-        currentValue = value;
-    }
+//    if (currentOpr == none){
+//        currentValue = currentValue * 10 + value;
+//    } else {
+//        currentValue = value;
+//    }
     self.myLabel.text = [NSString stringWithFormat:@"%d", currentValue];
     
     
@@ -124,7 +125,6 @@ typedef enum opr Operator;
     currentValue = 0;
     currentOpr = 0;  //=none
     calc = [[Calculator alloc] init];
-    self.number =0;
     self.myLabel.text = @"0";
     
 }
