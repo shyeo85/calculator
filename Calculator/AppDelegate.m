@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "Calculator.h"
 @interface AppDelegate ()
 
 @end
@@ -17,6 +17,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    Calculator *calc = [[Calculator alloc] init];
+    
+    [calc setAccumulator:100.0];
+    [calc add:200];
+    [calc printAccumulator];
+    
     return YES;
 }
 
